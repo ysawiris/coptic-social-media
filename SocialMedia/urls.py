@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # Admin Site
     path('admin/', admin.site.urls),
-    #Link the urls in Media_Post 
-    path('', include('mediapost.urls'))
+
+    #Link the urls in media 
+    path('', include('media.urls'))
 ]
