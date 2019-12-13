@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
     <link rel='stylesheet' href='https://bootswatch.com/4/minty/bootstrap.min.css'>
 
     <!-- CUSTOM STYLES -->
-    <link rel="stylesheet" href="/static/templates/css/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -57,7 +58,8 @@
     {% block content %}{% endblock %}
 
     <div class="footer p-5">
-        <img class="nav-logo" src="/static/image-yoyo-final.png" style="height: 35px;"> &copy; 2019
+        {% load static %}
+        <img class="nav-logo" src="{% static "image-yoyo-final.png" %}" style="height: 35px;"> &copy; 2019
     </div>
 
 </body>
