@@ -1,0 +1,42 @@
+.container {
+    position: relative;
+}
+
+.tests {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+}
+
+.brand {
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.logout {
+    position: absolute;
+    right: 25px;
+}
+
+.profile {
+    margin-left: 25px;
+}
+
+.bar {
+    margin-right: 5px;
+}
+
+.align-items-center {
+    align-items: center!important;
+}
+
+.signup {
+    position: absolute;
+    right: 25px;
+}
+
+.footer {
+    text-align: center;
+}

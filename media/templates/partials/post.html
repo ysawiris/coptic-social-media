@@ -1,0 +1,20 @@
+<!-- col- elements here -->
+<div class="card " style="width: 500px;">
+    <div class="row " style="margin: 0; padding: 10px;">
+        <img class="rounded-circle " style="height: 75px; padding: 5px; " src="kuz-profile.jpeg" alt="Circle image">
+        <div class="col-sm-8">
+            <h5 class="text-dark " style="margin: 0; ">{{ post.author }}</h5>
+            <p class="text-muted ">{{ post.created }}</p>
+        </div>
+    </div>
+    <div class="card-body pt-1 ">
+        <p class="card-text text-dark ">{{ post.content }}</p>
+        <div class="col text-center ">
+            <div class=" btn-group-fluid btn-group-sm " role="group " aria-label="Basic example ">
+                <button type="button " class="btn btn-secondary ">Like</button>
+                <button type="button " class="btn btn-secondary ">Comment</button>
+                <button type="button " class="btn btn-secondary ">Share</button>
+            </div>
+        </div>
+    </div>
+</div>

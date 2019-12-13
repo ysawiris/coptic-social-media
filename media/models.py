@@ -26,7 +26,7 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         """ Creates a URL safe slug automatically when a new a post is created. """
         if not self.pk:
-            self.slug = slugify(self.title, allow_unicode=True)
+            self.slug = slugify(self.content , allow_unicode=True)
 
         # Call save on the superclass.
-        return super(Page, self).save(*args, **kwargs)
+        return super(Post, self).save(*args, **kwargs)

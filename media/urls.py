@@ -1,9 +1,9 @@
 from django.urls import path
-from media.views import PostListView, PostDetailView, PostCreateNewView
+from media.views import NewsFeedListView, PostCreateNewView, ProfileListView
 
 
 urlpatterns = [
-    path('', PostListView.as_view(), name='media-list-post'),
+    path('', NewsFeedListView.as_view(), name='media-list-post'),
+    path('profile/', ProfileListView.as_view(), name='media-profile-post'),
     path('create_new/', PostCreateNewView.as_view(), name='media-create-new-post'),
-    path('<str:slug>/', PostDetailView.as_view(), name='media-details-post'),
 ]
