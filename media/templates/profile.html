@@ -1,37 +1,4 @@
 {% extends "base.html" %} {% block content %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-3 mb-3">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-    <div class="collapse navbar-collapse navbarContent">
-        <div class="btn-group-fluid btn-group-md rounded" role="group " aria-label="Basic example">
-            <a href="{% url 'media-list-post' %}"><button type="button" class="bar btn btn-info ">Home</button></a>
-            <a href="{% url 'media-profile-post' %}"><button type="button" class="bar btn btn-info ">Profile</button></a>
-            <button type="button" class="bar btn btn-info ">Notifications</button>
-            <button type="button" class="bar btn btn-info">Settings</button>
-        </div>
-    </div>
-    <a class="brand navbar-brand" href="#">Coptic Media</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-    <div class="logout collapse navbar-collapse navbarContent">
-        <div class="btn-group-fluid btn-group-md rounded" role="group " aria-label="Basic example">
-            <div class="row align-items-center">
-                <div class="form-inline p-1">
-
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Search</button>
-
-                </div>
-                <a href="index.html"><button type="submit" class="btn btn-danger btn-sm">LogOut</button></a>
-            </div>
-        </div>
-
-    </div>
-    </div>
-
-</nav>
 
 <div class="col-sm-12 rounded" style="height: 300px; background:transparent url('profile_cover.png') no-repeat center center /cover">
     <div class="col-sm-12 m-1">
@@ -39,7 +6,8 @@
             <div class="col-sm-6 p-3">
                 <div class=" card" style="background: transparent; border: 0px;">
                     <div class="row">
-                        <img class="card-img-top " src="kuz-profile.jpeg " style="width: 25%; " alt="Card image cap ">
+                        {% load static %}
+                        <img class="card-img-top " src="{% static "profile_cover.png" %}" style="width: 25%; " alt="Card image cap ">
                         <div class="card-body" style="color: black;">
                             <h4>Kyle Kuzma</h4>
                             <p class="text-muted">San Francisco Bay Area</p>
@@ -95,9 +63,11 @@
         <div class="col-md-6 pt-2 ">
             <div class="newsfeed container ">
                 <h4>News Feed</h4>
-                {% if posts %} {% for post in posts %} {% include "partials/post.html" %} {% endfor %} {% else %}
-                <div class="alert alert-primary" role="alert">No Posts to display.</div>
-                {% endif %}
+                <div class="card " style="width: 500px;">
+                    {% if posts %} {% for post in posts %} {% include "partials/post.html" %} {% endfor %} {% else %}
+                    <div class="alert alert-primary" role="alert">No Posts to display.</div>
+                    {% endif %}
+                </div>
 
             </div>
         </div>

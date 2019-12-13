@@ -13,7 +13,7 @@
     <link rel='stylesheet' href='https://bootswatch.com/4/minty/bootstrap.min.css'>
 
     <!-- CUSTOM STYLES -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!--Bootstrap JavaScript-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -25,6 +25,26 @@
 </head>
 
 <body style="background: whitesmoke;">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-3 mb-3">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse navbarContent">
+            <div class="btn-group-fluid btn-group-md rounded" role="group " aria-label="Basic example">
+                {% if user.is_authenticated %}
+                <a href="{% url 'media-list-post' %}"><button type="button" class="bar btn btn-info ">Home</button></a>
+                <a href="{% url 'media-profile-post' %}"><button type="button" class="bar btn btn-info ">Profile</button></a>
+                <button type="button" class="bar btn btn-info ">Notifications</button>
+                <button type="button" class="bar btn btn-info">Settings</button>
+                <a href="{% url 'logout' %}"><button type="button" class="bar btn btn-danger">LogOut</button></a> {% else %}
+                <a href="{% url 'login' %}" class="btn btn-light ml-2">Log In</a>
+                <a href="{% url 'media-signup-page' %}" class="btn btn-primary ml-2">Sign Up</a> {% endif %}
+            </div>
+            {% if user.is_authenticated %}
+            <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
+            {% endif %}
+        </div>
+        <a class="brand navbar-brand" href="newsfeed.html">Coptic Media</a>
+    </nav>
+
 
     {% block content %}{% endblock %}
 

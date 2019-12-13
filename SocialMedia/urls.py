@@ -19,7 +19,15 @@ from django.urls import path, include
 urlpatterns = [
     # Admin Site
     path('admin/', admin.site.urls),
-
+        
     #Link the urls in media 
-    path('', include('media.urls'))
+    path('', include('media.urls')),
+
+    #Enabling User Authentication in Django 
+    path('accounts/', include('django.contrib.auth.urls')),
+
+    #to link urls in Account App
+    path('accounts/', include('accounts.urls')),
+
+
 ]

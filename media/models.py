@@ -21,12 +21,12 @@ class Post(models.Model):
     def get_absolute_url(self):
         """ Returns a fully-qualified path for a page (/my-new-media-post). """
         path_components = {'slug': self.slug}
-        return reverse('meida-details-post', kwargs=path_components)
+        return reverse('media-details-post', kwargs=path_components)
 
     def save(self, *args, **kwargs):
         """ Creates a URL safe slug automatically when a new a post is created. """
         if not self.pk:
-            self.slug = slugify(self.content , allow_unicode=True)
+            self.slug = slugify(self.id , allow_unicode=True)
 
         # Call save on the superclass.
         return super(Post, self).save(*args, **kwargs)
