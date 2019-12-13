@@ -31,7 +31,7 @@
             </div>
             <!-- col- elements here -->
             <div class="list-group justify-content-center ">
-                <div class="card">
+                <div class="col-sm-12 b-2">
                     {% if posts %} {% for post in posts %} {% include "partials/post.html" %} {% endfor %} {% else %}
                     <div class="alert alert-primary" role="alert">No Posts to display.</div>
                     {% endif %}

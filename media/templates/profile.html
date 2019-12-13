@@ -1,13 +1,13 @@
 {% extends "base.html" %} {% block content %}
 
-<div class="col-sm-12 rounded" style="height: 300px; background:transparent url('profile_cover.png') no-repeat center center /cover">
+<div class="col-sm-12 rounded" style="height: 300px; background:transparent url('/static/profile_cover.png') no-repeat center center /cover">
     <div class="col-sm-12 m-1">
         <div class="profile row" style="margin: 25px; padding-bottom: 15px;">
             <div class="col-sm-6 p-3">
                 <div class=" card" style="background: transparent; border: 0px;">
                     <div class="row">
                         {% load static %}
-                        <img class="card-img-top " src="{% static "profile_cover.png" %}" style="width: 25%; " alt="Card image cap ">
+                        <img class="card-img-top " src="{% static "kuz-profile.jpeg" %}" style="width: 25%; " alt="Card image cap ">
                         <div class="card-body" style="color: black;">
                             <h4>Kyle Kuzma</h4>
                             <p class="text-muted">San Francisco Bay Area</p>
@@ -30,31 +30,28 @@
 <div class="posts container">
     <div class="row">
         <div class="col-md-6 pt-5">
-            <div class="card">
-                {% include "partials/create_post.html" %}
-            </div>
             <div class="photos container">
                 <h3>FavoritePhotos</h3>
                 <div class="row">
                     <div class="col-sm-4">
-                        <img src="kuz-profile.jpeg">
+                        <img src="/static/kuz-profile.jpeg">
                     </div>
                     <div class="col-sm-4">
-                        <img src="kuz-profile.jpeg">
+                        <img src="/static/kuz-profile.jpeg">
                     </div>
                     <div class="col-sm-4">
-                        <img src="kuz-profile.jpeg">
+                        <img src="/static/kuz-profile.jpeg">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <img src="kuz-profile.jpeg">
+                        <img src="/static/kuz-profile.jpeg">
                     </div>
                     <div class="col-sm-4">
-                        <img src="kuz-profile.jpeg">
+                        <img src="/static/kuz-profile.jpeg">
                     </div>
                     <div class="col-sm-4">
-                        <img src="kuz-profile.jpeg">
+                        <img src="/static/kuz-profile.jpeg">
                     </div>
                 </div>
 
