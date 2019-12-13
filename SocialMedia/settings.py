@@ -25,7 +25,7 @@ SECRET_KEY = '8^$_8=xhce!nb$2gzqee4+qcyot7=8(h-#rxhz#v@2*u8-1%5q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'copticmedia.herokuapp.com']
 
 
 # Application definition
@@ -130,6 +130,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, ‘static’)
 
 
 LOGIN_REDIRECT_URL = "/"
