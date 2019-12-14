@@ -2,3 +2,4 @@ django==2.2.7
 gunicorn
 django-heroku
 djangorestframework==3.10.3
+whitenoise==5.0.1
