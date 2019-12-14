@@ -8,6 +8,8 @@ from media.models import Post
 class NewsFeedListView_Test(TestCase):
     """Tests that the pagea works."""
     def test_route(self):
+        user = User.objects.create()
+        self.client.force_login(user)
        
         #Make a GET request, and test route returns 200
         response = self.client.get('/')
@@ -17,6 +19,8 @@ class NewsFeedListView_Test(TestCase):
 class ProfileListView_Test(TestCase):
     """Tests that the pagea works."""
     def test_route(self):
+        user = User.objects.create()
+        self.client.force_login(user)
        
         #Make a GET request, and test route returns 200
         response = self.client.get('/profile/')
@@ -26,6 +30,8 @@ class ProfileListView_Test(TestCase):
 class PostCreateNewView_Test(TestCase):
     """Tests that the pagea works."""
     def test_route(self):
+        user = User.objects.create()
+        self.client.force_login(user)
        
         #Make a GET request, and test route returns 200
         response = self.client.get('/create_new/')
@@ -35,6 +41,7 @@ class PostCreateNewView_Test(TestCase):
     def test_multiple_pages(self):
         #Create a user for ths test 
         user = User.objects.create()
+        self.client.force_login(user)
 
         #Create and save Pages to the Database 
         Post.objects.create(content="test", author=user)
