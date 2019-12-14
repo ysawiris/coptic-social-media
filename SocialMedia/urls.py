@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    #RestFul API
+    path('api/', include('api.urls')),
     # Admin Site
     path('admin/', admin.site.urls),
         
