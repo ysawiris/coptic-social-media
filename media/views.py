@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.views.generic.list import ListView
 from django.views.generic import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from media.models import Post
 from media.forms import PostForm
 
-class NewsFeedListView(ListView):
+class NewsFeedListView(LoginRequiredMixin, ListView):
     """ Renders a list of all Post. """
     model = Post
 
@@ -14,7 +15,7 @@ class NewsFeedListView(ListView):
         posts = self.get_queryset().all()
         return render(request, 'newsfeed.html', {'posts': posts})
 
-class ProfileListView(ListView):
+class ProfileListView(LoginRequiredMixin, ListView):
     """ Renders a list of all Post. """
     model = Post
 
@@ -23,7 +24,7 @@ class ProfileListView(ListView):
         posts = self.get_queryset().all()
         return render(request, 'profile.html', {'posts': posts})
 
-class PostCreateNewView(CreateView):
+class PostCreateNewView(LoginRequiredMixin, CreateView):
     def get(self, request):
       content = {'form': PostForm()}
       return render(request, 'create_new_post.html', content)
