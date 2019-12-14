@@ -25,7 +25,7 @@ SECRET_KEY = '8^$_8=xhce!nb$2gzqee4+qcyot7=8(h-#rxhz#v@2*u8-1%5q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'copticmedia.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['localhost', 'copticmedia.herokuapp.com', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
