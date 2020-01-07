@@ -16,16 +16,7 @@ class NewsFeedListView_Test(TestCase):
     
         self.assertEqual(response.status_code, 200)
 
-class ProfileListView_Test(TestCase):
-    """Tests that the pagea works."""
-    def test_route(self):
-        user = User.objects.create()
-        self.client.force_login(user)
-       
-        #Make a GET request, and test route returns 200
-        response = self.client.get('/profile/')
-    
-        self.assertEqual(response.status_code, 200)
+
 
 class PostCreateNewView_Test(TestCase):
     """Tests that the pagea works."""

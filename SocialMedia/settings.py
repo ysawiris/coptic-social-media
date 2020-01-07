@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'media',
     'accounts',
-
 ]
 
 MIDDLEWARE = [
@@ -133,6 +132,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'photos')
+MEDIA_URL = '/photos/'
+
+
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/accounts/login"
 

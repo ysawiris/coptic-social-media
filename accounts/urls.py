@@ -1,6 +1,7 @@
 from django.urls import path
-from accounts.views import SignUpView
+from accounts.views import register, ProfileListView
 
 urlpatterns = [
-    path('signup/', SignUpView.as_view(), name='media-signup-page')
+    path('signup/', register, name='media-signup-page'),
+    path('profile/', ProfileListView.as_view(), name='media-profile-post'),
 ]

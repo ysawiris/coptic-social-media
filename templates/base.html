@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="icon" href="{% static "image-yoyo-final.png" %}">
+    <link rel="icon" href="{% static " image-yoyo-final.png " %}">
 
     <!-- BOOTSTRAP -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -19,41 +19,51 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
     <!--Bootstrap JavaScript-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <title>Coptic Media</title>
 
 </head>
 
 <body style="background: whitesmoke; min-height: 100%; ">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow p-3 mb-3">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        <div class="collapse navbar-collapse navbarContent">
-            <div class="btn-group-fluid btn-group-md rounded" role="group " aria-label="Basic example">
-                {% if user.is_authenticated %}
-                <a href="{% url 'media-list-post' %}"><button type="button" class="bar btn btn-info ">Home</button></a>
-                <a href="{% url 'media-profile-post' %}"><button type="button" class="bar btn btn-info ">Profile</button></a>
-                <button type="button" class="bar btn btn-info ">Notifications</button>
-                <button type="button" class="bar btn btn-info">Settings</button>
-                {% endif %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow p-3 mb-3">
+        {% if user.is_authenticated %}
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toogler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'media-list-post' %}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'media-profile-post' %}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nofications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
             </div>
-
-            {% if user.is_authenticated %}
-            <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
-            {% endif %}
-
         </div>
-        <a class="brand navbar-brand" href="{% url 'media-list-post' %}">Coptic Media</a>
-        
-        <div class="btn-group-fluid btn-group-md rounded" role="group " aria-label="Basic example">
+        <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
+        {% endif %}
+
+        <a class="center navbar-brand" href="{% url 'media-list-post' %}">Coptic Media</a>
+
+        <div class="btn-group-fluid btn-group-md rounded" role="group" aria-label="Basic example">
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}"><button type="button" class="bar btn btn-danger">LogOut</button></a> {% else %}
             <a href="{% url 'login' %}" class="btn btn-light ml-2">Log In</a>
-            <a href="{% url 'media-signup-page' %}" class="btn btn-primary ml-2">Sign Up</a> 
-            {% endif %}
+            <a href="{% url 'media-signup-page' %}" class="btn btn-primary ml-2">Sign Up</a> {% endif %}
         </div>
+
     </nav>
 
 
@@ -61,7 +71,7 @@
 
     <div class="footer p-5">
         {% load static %}
-        <img class="nav-logo" src="{% static "image-yoyo-final.png" %}" style="height: 35px;"> &copy; 2019
+        <img class="nav-logo" src="{% static 'image-yoyo-final.png' %}" style="height: 35px;"> &copy; 2019
     </div>
 
 </body>

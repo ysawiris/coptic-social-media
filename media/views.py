@@ -15,14 +15,6 @@ class NewsFeedListView(LoginRequiredMixin, ListView):
         posts = self.get_queryset().all()
         return render(request, 'newsfeed.html', {'posts': posts})
 
-class ProfileListView(LoginRequiredMixin, ListView):
-    """ Renders a list of all Post. """
-    model = Post
-
-    def get(self, request):
-        """ GET a list of Post. """
-        posts = self.get_queryset().all()
-        return render(request, 'profile.html', {'posts': posts})
 
 class PostCreateNewView(LoginRequiredMixin, CreateView):
     def get(self, request):

@@ -1,6 +1,10 @@
-.container {
-    position: relative;
-}
+/*---Media Queries --*/
+
+@media (max-width: 992px) {}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {}
 
 .tests {
     position: absolute;
@@ -8,11 +12,9 @@
     right: 0;
 }
 
-.brand {
-    position: absolute;
-    display: block;
-    left: 50%;
-    margin-left: -100px;
+.center {
+    margin: auto;
+    width: 50%;
 }
 
 .logout {
