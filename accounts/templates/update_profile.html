@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+<h3>Update<small class="text-muted">your email address and profile picture here!</small></h3>
+<hr>
+<div class="row">
+    <div class="col">
+        {% if form.errors %}
+        <p>Opps! Please try again.</p>
+        {% endif %} 
+
+        <form method='POST' enctype="multipart/form-data">
+            {% csrf_token %} {% for field in form %} {% for error in field.errors %}
+            <p class="text-danger">{{ error }}</p>
+            {% endfor %}
+            <fieldset class="form-group"></fieldset>
+                <legend class="border-bottom mb-4">Profile Info</legend>
+                {{ form }}
+            </fieldset>
+
+            {% endfor %}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
