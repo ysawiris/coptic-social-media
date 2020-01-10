@@ -1,3 +1,12 @@
+UPDATES: 
+
+- Users can now upload a Profile Picture.
+- Fixed issue where you can select who posted the post. Now each post is assigned to the user who is logged in. 
+- When a user is created a profile is automatically created. 
+- Fixed the collaspe navbar, its now working!
+
+
+
 Welcome to Coptic Media 
 
 Visit Us @ http://copticmedia.herokuapp.com/
