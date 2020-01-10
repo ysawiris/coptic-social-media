@@ -26,6 +26,7 @@ class PostCreateNewView(LoginRequiredMixin, CreateView):
       if form.is_valid():
         instance = form.save(commit=False)
         instance.user = request.user
+        instance.image = request.user.profile.image
         instance.save()
         return HttpResponseRedirect(reverse_lazy('media-list-post'))
       return render(request, 'create_new_post.html', {'form': form})

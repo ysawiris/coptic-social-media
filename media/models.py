@@ -11,5 +11,5 @@ class Post(models.Model):
     content = models.TextField(help_text="Write the content of your post here.")
     created = models.DateTimeField(auto_now_add=True,
                                    help_text="The date and time this page was created. Automatically generated when the model saves.")
-    
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
         
