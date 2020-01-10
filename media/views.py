@@ -12,7 +12,7 @@ class NewsFeedListView(LoginRequiredMixin, ListView):
 
     def get(self, request):
         """ GET a list of Post. """
-        posts = self.get_queryset().all()
+        posts = self.get_queryset().all().order_by('-created')
         return render(request, 'newsfeed.html', {'posts': posts})
 
 
