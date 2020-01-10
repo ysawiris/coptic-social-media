@@ -31,12 +31,12 @@
 <body style="background: whitesmoke; min-height: 100%; ">
     <nav class="navbar navbar-expand-md navbar-dark bg-primary shadow p-3 mb-3">
         {% if user.is_authenticated %}
-        <div class="container-fluid">
+        <div class="nav container-fluid" style="width: 500px; margin-left: 25px; margin-right: 0px;">
             <button class="navbar-toggler" type="submit" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toogler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'media-list-post' %}">Home</a>
                     </li>
@@ -52,12 +52,12 @@
                 </ul>
             </div>
         </div>
-        <div class="text-white">Hello, <strong>{{ user }}</strong>!</div>
+        <div class="text-white" style="margin-right: 15px;">Hello, <strong>{{ user }}</strong>!</div>
         {% endif %}
 
-        <a class="center navbar-brand" href="{% url 'media-list-post' %}">Coptic Media</a>
+        <a class="navbar-brand" href="{% url 'media-list-post' %}">Coptic Media</a>
 
-        <div class="btn-group-fluid btn-group-md rounded" role="group" aria-label="Basic example">
+        <div class="btn-group-fluid btn-group-md rounded ml-auto" role="group" aria-label="Basic example">
             {% if user.is_authenticated %}
             <a href="{% url 'logout' %}"><button type="button" class="bar btn btn-danger">LogOut</button></a> {% else %}
             <a href="{% url 'login' %}" class="btn btn-light ml-2">Log In</a>
@@ -66,10 +66,10 @@
 
     </nav>
 
-
+    
     {% block content %}{% endblock %}
 
-    <div class="footer p-5">
+    <div class="footer p-5 ">
         {% load static %}
         <img class="nav-logo" src="{% static 'image-yoyo-final.png' %}" style="height: 35px;"> &copy; 2019
     </div>

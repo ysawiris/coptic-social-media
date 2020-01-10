@@ -39,6 +39,7 @@
     right: 25px;
 }
 
-.footer {
-    text-align: center;
+.nav {
+    align-items: left;
 }
+
