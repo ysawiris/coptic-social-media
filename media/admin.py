@@ -5,7 +5,7 @@ from media.models import Post
 
 class PostAdmin(admin.ModelAdmin):
     """ Show helpful fields on the changelist page. """
-    list_display = ('slug', 'author', 'created')
+    list_display = ('user','content','created')
 
 
 admin.site.register(Post, PostAdmin)

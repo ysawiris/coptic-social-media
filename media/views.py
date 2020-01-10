@@ -22,8 +22,10 @@ class PostCreateNewView(LoginRequiredMixin, CreateView):
       return render(request, 'create_new_post.html', content)
   
     def post(self, request):
-      form = PostForm(request.POST, instance=request.user)
+      form = PostForm(request.POST)
       if form.is_valid():
-        form.save()
+        instance = form.save(commit=False)
+        instance.user = request.user
+        instance.save()
         return HttpResponseRedirect(reverse_lazy('media-list-post'))
       return render(request, 'create_new_post.html', {'form': form})

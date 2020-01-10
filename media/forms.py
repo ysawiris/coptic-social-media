@@ -6,4 +6,4 @@ class PostForm(forms.ModelForm):
     """ Render and process a form based on the Page model. """
     class Meta:
         model = Post
-        fields = ('content', 'author')
+        fields = ['content']
