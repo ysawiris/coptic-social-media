@@ -1,4 +1,4 @@
-django==2.2.7
+django==2.2.13
 gunicorn
 django-heroku
 djangorestframework==3.10.3
